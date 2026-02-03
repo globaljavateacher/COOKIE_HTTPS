@@ -18,7 +18,7 @@ public class CookieServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println(this);
         String uuid = UUID.randomUUID().toString();
-        Cookie secureCookie = new Cookie("uuid", uuid);
+        Cookie secureCookie = new Cookie("uuid_server", uuid);
         secureCookie.setHttpOnly(true);
         secureCookie.setSecure(true);
         secureCookie.setPath("/");
@@ -30,4 +30,5 @@ public class CookieServlet extends HttpServlet {
         pw.close();
 	}
 }
+
 
